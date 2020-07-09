@@ -54,7 +54,7 @@ def q2():
     mt = pd.read_csv('data/MT_cleaned.csv')
     vt = pd.read_csv('data/VT_cleaned.csv')
     mt['year'] = pd.DatetimeIndex(mt['stop_date']).year
-    print(mt.head())
+    # print(mt.head())
     print('1.	The proportion of traffic stops in MT involving male drivers:',
           len(mt[mt['driver_gender'] == 'M']) / len(mt))
     chisq, p = chisquare(mt['is_arrested'].to_numpy())

@@ -1,0 +1,15 @@
+Mean of P when n=26, m=2: 24.9681
+SD of P when n=26, m=2: 3.571201813115579
+Conditional probability: 0.9998590550222097
+Mean of P when n=52, m=4: 51.0163
+SD of P when n=52, m=4: 6.176539023595657
+Conditional probability: 0.9999999998666869
+
+
+1.	The proportion of traffic stops in MT involving male drivers: 0.6749749732765495
+2.	Factor increase in a traffic stop arrest likelihood in MT from OOS plates: 807923.0 1.0
+3.	The proportion of traffic stops in MT involving speeding violations: 0.6580998111785223
+4.	Factor increase in traffic stop DUI likelihood in MT over VT: DUI likelihood is ambiguous
+5.	The average manufacture year of vehicles stopped in MT in 2010 (2020 has not any record): 2001.5213770353278
+6.	The difference in the total number of stops that occurred between min and max hours in both MT and VT I don't get the meaning of min and max in time format
+7.	The area in sq. km of the largest county in MT: I can't find related part in given data
