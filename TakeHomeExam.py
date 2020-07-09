@@ -1,6 +1,8 @@
 import random
 import numpy as np
 import scipy.special as scsp
+import pandas as pd
+from scipy.stats import chisquare
 
 
 def simulateGame(n, m):
@@ -48,5 +50,26 @@ def q1():
     print("Conditional probability:", p)
 
 
+def q2():
+    mt = pd.read_csv('data/MT_cleaned.csv')
+    vt = pd.read_csv('data/VT_cleaned.csv')
+    mt['year'] = pd.DatetimeIndex(mt['stop_date']).year
+    print(mt.head())
+    print('1.	The proportion of traffic stops in MT involving male drivers:',
+          len(mt[mt['driver_gender'] == 'M']) / len(mt))
+    chisq, p = chisquare(mt['is_arrested'].to_numpy())
+    print('2.	Factor increase in a traffic stop arrest likelihood in MT from OOS plates:', chisq, p)
+    print('3.	The proportion of traffic stops in MT involving speeding violations:',
+          len(mt[mt['violation'].str.contains('Speeding', na=False)]) / len(mt))
+    print('4.	Factor increase in traffic stop DUI likelihood in MT over VT:', 'DUI likelihood is ambiguous')
+    print('5.	The average manufacture year of vehicles stopped in MT in 2010 (2020 has not any record):', np.mean(
+        mt[(mt['year'] == 2010) & (mt['vehicle_year'] != 'NON-') & (mt['vehicle_year'] != 'UNK')][
+            'vehicle_year'].dropna().values.astype(np.int)))
+    print('6.	The difference in the total number of stops that occurred between min and max hours in both MT and VT',
+          'I don\'t get the meaning of min and max in time format')
+    print('7.	The area in sq. km of the largest county in MT:', 'I can\'t find related part in given data')
+
+
 if __name__ == "__main__":
     q1()
+    q2()
